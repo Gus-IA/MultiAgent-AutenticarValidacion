@@ -36,13 +36,6 @@ A partir de una **idea de negocio**, el sistema:
 
 ---
 
-## 🧩 Arquitectura del sistema
-
-El flujo está implementado con **LangGraph**:
-
-```mermaid
-START --> agent1 --> agent2 --> tools --> agent2 --> END
-
 
 🧩 Requisitos
 
