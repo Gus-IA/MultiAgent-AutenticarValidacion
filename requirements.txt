@@ -4,3 +4,5 @@ langchain-openai
 langchain-tavily
 langchain-core
 typing_extensions
+python-dotenv
+langgraph-checkpoint-sqlite

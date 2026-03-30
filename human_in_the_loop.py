@@ -31,7 +31,7 @@ tools = [
 ]
 
 # instancia llm
-llm = init_chat_model("openai:gpt-5.2")
+llm = init_chat_model("groq:llama-3.3-70b-versatile")
 
 # asignamos herramientas
 llm_with_tools = llm.bind_tools(tools)

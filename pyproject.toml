@@ -1,0 +1,17 @@
+[project]
+name = "multiagent-autenticarvalidacion"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv",
+    "langgraph",
+    "langchain-groq",
+    "langchain-tavily",
+    "langchain-core",
+    "typing_extensions",
+    "IPython",
+    "langgraph-checkpoint-sqlite>=3.0.3",
+    "langchain-openai>=1.1.12",
+]

@@ -3,7 +3,7 @@ from typing import Annotated
 from typing_extensions import TypedDict
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain_tavily import TavilySearch
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import MemorySaver
@@ -98,8 +98,8 @@ tools = [
     linkedin_search,
 ]
 
-llm = ChatOpenAI(
-    model="gpt-5.2",
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
     temperature=0.3,
     max_tokens=1000,
 )
@@ -173,7 +173,7 @@ def agent2(state: State):
         Sé proactivo y ejecuta las herramientas necesarias sin esperar confirmación.
     """
     conversation = [SystemMessage(content=system_prompt), *state["messages"]]
-    return {"messages": [llm_with_tools.invoke(conversation)]}
+    return {"messages": [lm_with_tools.invoke(conversation)]}
 
 
 tool_node = ToolNode(tools=tools)

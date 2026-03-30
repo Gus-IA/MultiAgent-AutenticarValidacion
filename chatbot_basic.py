@@ -10,10 +10,10 @@ from IPython.display import Image
 load_dotenv()
 
 
-os.getenv("OPENAI_API_KEY")[:15] + "*" * 10
+os.getenv("GROQ_API_KEY")[:15] + "*" * 10
 
 # inicializamos el llm
-llm = init_chat_model("openai:gpt-5.2")
+llm = init_chat_model("groq:llama-3.3-70b-versatile")
 
 
 # estado del grafo

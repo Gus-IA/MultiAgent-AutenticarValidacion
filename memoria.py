@@ -23,7 +23,7 @@ os.getenv("TAVILY_API_KEY")[:10] + "*" * 10
 tool = TavilySearch(max_results=3)
 
 # instancia llm
-llm = init_chat_model("openai:gpt-5.2")
+llm = init_chat_model("groq:llama-3.3-70b-versatile")
 
 # le asignamos las herramientas
 llm_with_tools = llm.bind_tools([tool])
@@ -48,7 +48,7 @@ graph_builder.add_node("agent", agent)
 graph_builder.add_node("tools", tool_node)
 graph_builder.add_conditional_edges("agent", tools_condition)
 graph_builder.add_edge("tools", "agent")
-graph = graph_builder.compile(checkpointer=checkpointer())  # memoria
+graph = graph_builder.compile(checkpointer=checkpointer)  # memoria
 
 # lo visualizamos
 Image(graph.get_graph().draw_mermaid_png())
